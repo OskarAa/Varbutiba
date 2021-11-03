@@ -14,19 +14,48 @@ print(INF)
 def statistiska():
 
     valueM = int(input("notikumu skaits:"))
+
+    if valueM > 0:
+        print()
+    else:
+        print("\033[91mJusu pirmais skailtlis nevar but negativs, meginiet velreiz")
+        exit(0)
+
     valueK = int(input("eksperimentu skaits:"))
 
-    w = valueM/valueK;
+    p = valueM/valueK;
+
+    if valueK > 0:
+        print()
+    else:
+        print("\033[91mJusu otrais skailtlis nevar but negativs, meginiet velreiz")
+        exit(0)
+
 
     print("\033[94m{}\033[0m".format("--------------------------------"))
-    value_1 = w*100
+    value_1 = p*100
     print("Tas bus " + format(value_1,",.2f")+"%"+" statistiskā varbūtība")
     print("\033[94m{}\033[0m".format("--------------------------------"))
+
 
 def geometriksa():
 
     value_radiuss = int(input("Kada radius un tilpumi:"))
+
+    if value_radiuss > 0:
+        print()
+    else:
+        print("\033[91mJusu pirmais skailtlis nevar but negativs, meginiet velreiz")
+        exit(0)
+
     value_malas = int(input("kada malas garumu:"))
+
+    if value_malas > 0:
+        print()
+    else:
+        print("\033[91mJusu otrais skailtlis nevar but negativs, meginiet velreiz")
+        exit(0)
+
     Pi = math.pi
 
     square = (math.pow(value_malas, 2)) / ((math.pow(value_radiuss, 2))) * Pi
@@ -40,8 +69,23 @@ def geometriksa():
 
 
 def klasiska():
+
     labveligo = float (input("labvēlīgo notikumu skaits:"))
+
+    if labveligo > 0:
+        print()
+    else:
+        print("\033[91mJusu pirmais skailtlis nevar but negativs, meginiet velreiz")
+        exit(0)
+
+
     kopskaits = float (input("visu notikumu kopskaits:"))
+
+    if kopskaits > 0:
+        print()
+    else:
+        print("\033[91mJusu otrais skailtlis nevar but negativs, meginiet velreiz")
+        exit(0)
 
     klasiska = labveligo/kopskaits
 
