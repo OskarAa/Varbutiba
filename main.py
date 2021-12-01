@@ -94,17 +94,61 @@ def klasiska():
     print("\033[94m{}\033[0m".format("--------------------------------"))
 
 
+
+def calc(first, second):
+    A = first/second
+    varbutiba = A*100
+    print("\033[94m{}\033[0m".format("--------------------------------"))
+    print("\033[1;97mvarbūtība ir = " + format(varbutiba, ",.2f") + '%')
+    print("\033[94m{}\033[0m".format("--------------------------------"))
+    return A
+
+
+def lottery():
+    print("\033[91mPirmais spēlētājs")
+    print("\033[93m")
+    first = int(input("Enter first number:"))
+    second = int(input("Enter second number:"))
+    print("\033[93m")
+    print("\033[91mOtrais spēlētājs")
+    print("\033[93m")
+    first1 = int(input("Enter again first number:"))
+    second2 = int(input("Enter again second number:"))
+
+    pirma = calc(first, second)
+    otra = calc(first1, second2)
+
+    if pirma > otra:
+        print("Pirma kom. ir Visveiksmigaks " + " [ " + str(first) + " ] " + "  " + " [ " + str(second) + " ] " )
+    else:
+        print("Otra kom. ir Visveiksmigaks: " + " [ " + str(first1) + " ] " + "  " + " [ " + str(second2) + " ] " )
+
+
+
+
+
+
 if __name__ == '__main__':
         choice = input("Kada veida varbutibas aprekini Tev sodien padoma? \n"
                    "Ievadi burtu:\n"
                     "-K klasiska metode n no n\n"
                    "-G geometriksa varbutiba\n"
-                   "-S statiska varbutiba k m reizes\n")
+                   "-S statiska varbutiba k m reizes\n"
+                   "\033[92m-L Loterejas kalkulatos\n")
         if choice.lower() == 'k':
             klasiska()
         if choice.lower() == 'g':
             geometriksa()
         if choice.lower() == 's':
             statistiska()
+        if choice.lower() == 'L':
+            calc()
+        while True:
+            lottery()
+            restart = input("do you want again?").lower()
+            if restart == "y":
+                lottery()
+            else:
+                exit(0)
         else:
             exit(0)
